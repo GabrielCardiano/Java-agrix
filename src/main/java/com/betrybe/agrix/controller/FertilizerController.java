@@ -1,6 +1,6 @@
 package com.betrybe.agrix.controller;
 
-import com.betrybe.agrix.dto.FertilizerDto;
+import com.betrybe.agrix.dto.FertilizerCreateDto;
 import com.betrybe.agrix.model.entity.Fertilizer;
 import com.betrybe.agrix.service.FertilizerService;
 import java.util.List;
@@ -34,7 +34,7 @@ public class FertilizerController {
   }
 
   @PostMapping
-  ResponseEntity<Fertilizer> createFertilizer(@RequestBody FertilizerDto fertilizerDto) {
+  ResponseEntity<Fertilizer> createFertilizer(@RequestBody FertilizerCreateDto fertilizerDto) {
     Fertilizer newFertilizer = fertilizerService.insertFertilizer(fertilizerDto.toFertilizer());
     return ResponseEntity.status(HttpStatus.CREATED).body(newFertilizer);
   }

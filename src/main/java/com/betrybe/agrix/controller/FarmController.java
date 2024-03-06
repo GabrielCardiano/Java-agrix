@@ -4,7 +4,7 @@ import static com.betrybe.agrix.dto.CropDto.cropListToDto;
 import static com.betrybe.agrix.dto.CropDto.cropToDto;
 
 import com.betrybe.agrix.dto.CropDto;
-import com.betrybe.agrix.dto.FarmDto;
+import com.betrybe.agrix.dto.FarmCreateDto;
 import com.betrybe.agrix.model.entity.Crop;
 import com.betrybe.agrix.model.entity.Farm;
 import com.betrybe.agrix.service.CropService;
@@ -48,7 +48,7 @@ public class FarmController {
    * @return the response entity
    */
   @PostMapping
-  public ResponseEntity<Farm> createFarm(@RequestBody FarmDto farmDto) {
+  public ResponseEntity<Farm> createFarm(@RequestBody FarmCreateDto farmDto) {
     // receive farmDTO tranform to farm
     Farm newFarm = farmService.insertFarm(farmDto.toFarm());
     return ResponseEntity.status(HttpStatus.CREATED).body(newFarm);
