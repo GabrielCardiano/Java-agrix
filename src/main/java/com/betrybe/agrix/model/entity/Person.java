@@ -33,6 +33,8 @@ public class Person implements UserDetails {
 
   private Role role;
 
+  public Person() {
+  }
 
   /**
    * Instantiates a new Person.
